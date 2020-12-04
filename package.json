@@ -1,0 +1,33 @@
+{
+  "name": "myreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode development",
+    "server": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evgen7171/ReactJS_Lessons.git"
+  },
+  "author": "geek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evgen7171/ReactJS_Lessons/issues"
+  },
+  "homepage": "https://github.com/evgen7171/ReactJS_Lessons#readme",
+  "dependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
