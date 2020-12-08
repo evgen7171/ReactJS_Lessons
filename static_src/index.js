@@ -1,16 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
-
-let messages = ['Привет', 'Как дела?'];
+const messages = ['Привет', 'Как дела?']
 
 const MessageComponent = (props) => <div>{props.text}</div>;
 
 const MessageField = (props) => {
-    return props.messages.map(message => <MessageComponent text={ message } />);
-};
+    const [messages, setMessage] = useState(['Привет', 'Как дела?']);
+    const addMessage = text => {
+        setMessage([...messages, text])
+    }
+    return (
+        <div>
+            {messages.map((message, key) =>
+                <MessageComponent text={message} key={key}/>
+            )}
+            <input type="button" value="Добавить" onClick={() => addMessage('Нормально')}/>
+        </div>
+    )
+}
 
 ReactDOM.render(
-    <MessageField messages={ messages } />,
+    <MessageField/>,
     document.getElementById('root'),
 );
