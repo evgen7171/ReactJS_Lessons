@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbee5228-cb31-4498-847e-d860f143e65c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Message.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MessageField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607498341458</updated>
       <workItem from="1607498345108" duration="155000" />
-      <workItem from="1607571708290" duration="7090000" />
+      <workItem from="1607571708290" duration="7645000" />
     </task>
     <servers />
   </component>
