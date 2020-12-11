@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <App />
+      {/* по заданию в компонент App должен помещаться компонент Layout, в котором хранится все остальное*/}
   </React.StrictMode>,
   document.getElementById('root')
 );

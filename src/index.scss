@@ -1,6 +1,10 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
 $messageUserWidth: 100px;
+$colorPrime: #0B54A2;
+$colorPrimeFilter: rgba(11, 84, 152, 0.8);
+$colorSecond: #4ecaca;
+$colorBack: #BBCBDD;
 
 body {
   margin: 0;
@@ -29,30 +33,60 @@ code {
 
 .message-text, .message-text-mine {
   margin-top: -24px;
-  text-align: justify;
-  padding-left: $messageUserWidth;
   width: 100%;
+  word-wrap: break-word;
 }
-.message-text-mine{
-  margin-top: 0;
+
+.message-text {
+  padding-left: $messageUserWidth;
+}
+
+.message-text-mine {
+  margin-right: 1.2rem;
 }
 
 .form {
-  background-color: #BBCBDD;
+  background-color: $colorBack;
 }
 
 .control-btn {
-  background-color: #0B54A2;
+  background-color: $colorPrime;
 
   &:hover {
-    color: #0B54A2;
     border-color: currentColor;
-    background-color: white;
+    background-color: $colorSecond;
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgb(10, 38, 105),
-    0 0 0 1.5px rgb(133, 86, 202);
+    box-shadow: 0 0 0 3px $colorPrime,
+    0 0 0 1.5px $colorSecond;
   }
+}
+
+.chat-item {
+  cursor: pointer;
+}
+
+.chat-item.active {
+  background-color: $colorPrimeFilter;
+}
+
+.chat-item:hover {
+  background-color: $colorSecond;
+  color: white;
+}
+
+.message {
+  cursor: pointer;
+}
+
+.message-text-in {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.message:hover .message-text-in {
+  background-color: $colorPrimeFilter;
+  color: white;
 }
