@@ -2,18 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbee5228-cb31-4498-847e-d860f143e65c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ChatList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MessageUserIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.sass-cache/7e7c2f1dacae2de83c3089d479102e0174c196e0/index.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ChatItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ControlPanel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DataFunctions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DrawerIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MessageController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SideBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/robotWatch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/useStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.sass-cache/26aaac4c5c3509147a7cb1ab069a68e29bb22eb3/index.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/.sass-cache/26aaac4c5c3509147a7cb1ab069a68e29bb22eb3/index.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MessageField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MessageUserIcon.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
@@ -49,11 +60,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OS\domains\reactMaterial\src\components" />
       <recent name="D:\OS\domains\react\src\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OS\domains\reactMaterial\src\components" />
+      <recent name="D:\OS\domains\reactMaterial\src\data" />
+      <recent name="D:\OS\domains\reactMaterial" />
+      <recent name="D:\OS\domains\reactMaterial\src\components\old" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -69,7 +88,12 @@
       <workItem from="1607584837784" duration="7456000" />
       <workItem from="1607596153498" duration="1301000" />
       <workItem from="1607598473100" duration="85000" />
-      <workItem from="1607608583360" duration="19107000" />
+      <workItem from="1607608583360" duration="19381000" />
+      <workItem from="1607684487338" duration="17371000" />
+      <workItem from="1607767715343" duration="22632000" />
+      <workItem from="1607792619623" duration="365000" />
+      <workItem from="1607793014970" duration="1263000" />
+      <workItem from="1607794437297" duration="23680000" />
     </task>
     <servers />
   </component>

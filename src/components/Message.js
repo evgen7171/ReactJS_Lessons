@@ -1,7 +1,7 @@
 import React from "react";
 import {Avatar, ListItem, ListItemAvatar, ListItemText} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import {getUserNameByMessage, isMineMessage} from "../Data";
+import {getUserNameByMessage, isMineMessage} from "./DataFunctions";
 
 export const Message = ({message}) => {
     const userName = getUserNameByMessage(message);

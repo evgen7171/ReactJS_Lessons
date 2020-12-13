@@ -22,7 +22,7 @@ export const messagesArray = [
     {
         user_id: 2,
         chat_id: 2,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, deleniti nisi nobis odio sunt.'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, deleniti nisi nobis odio sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, deleniti nisi nobis odio sunt.'
     },
 ];
 
