@@ -1,0 +1,102 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+$messageUserWidth: 100px;
+$colorPrime: #0B54A2;
+$colorPrimeFilter: rgba(11, 84, 152, 0.8);
+$colorSecond: #4ecaca;
+$colorBack: #BBCBDD;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.messages-field {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-user {
+  height: inherit;
+  width: $messageUserWidth;
+}
+
+.message-text, .message-text-mine {
+  margin-top: -24px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.message-text {
+  padding-left: $messageUserWidth;
+}
+
+.message-text-mine {
+  margin-right: 1.2rem;
+}
+
+.form {
+  background-color: $colorBack;
+}
+
+.control-btn {
+  background-color: $colorPrime;
+
+  &:hover {
+    border-color: currentColor;
+    background-color: $colorSecond;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px $colorPrime,
+    0 0 0 1.5px $colorSecond;
+  }
+}
+
+.chat-item {
+  cursor: pointer;
+}
+
+.chat-item.active {
+  background-color: $colorPrimeFilter;
+}
+
+.chat-item:hover {
+  background-color: $colorSecond;
+  color: white;
+}
+
+.message {
+  cursor: pointer;
+}
+
+.message-text-in {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.message:hover .message-text-in {
+  background-color: $colorPrimeFilter;
+  color: white;
+}
+
+.form-group-my{
+  justify-content: center;
+  border: 1px solid #000
+}
+
+.side-bar{
+  width: calc(100% - 240px);
+  margin-left: 240px;
+}
