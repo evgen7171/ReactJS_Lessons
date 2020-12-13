@@ -1,49 +1,38 @@
-import React, {useCallback, useEffect, useLayoutEffect, useRef, useState} from "react"
-import {MessageUserIcon} from "./MessageUserIcon";
+import React from "react";
+import {Avatar, ListItem, ListItemAvatar, ListItemText} from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import {getUserNameByMessage, isMineMessage} from "../Data";
 
-const colors = ['red', 'blue', 'green']
+export const Message = ({message}) => {
+    const userName = getUserNameByMessage(message);
+    const isMine = isMineMessage(message);
 
-export const Message = ({message, getUser, user_id_mine}) => {
-    const getColor = useCallback(message => colors[getUser(message.user_id).id], [getUser])
-    const isMineMessage = useCallback(message => user_id_mine === message.user_id, [user_id_mine])
-    const [classes, setClasses] = useState("message-text-in")
-    const targetRef = useRef()
-
-    useEffect(() => {
-        const elem = targetRef.current
-        if (parseInt(getComputedStyle(elem).lineHeight) < elem.offsetHeight && classes==="message-text-in") {
-            console.log(parseInt(getComputedStyle(elem).lineHeight), elem.offsetHeight)
-            setClasses(classes + " text-justify")
+    return <ListItem alignItems="flex-start">
+        {!isMine &&
+        <ListItemAvatar>
+            <Avatar alt={userName} src="/static/images/avatar/avatar.jpg"/>
+        </ListItemAvatar>
         }
-    })
-
-    return (<>
-            {!isMineMessage(message) ?
-
-                <div className="row ml-0 mr-0">
-                    <div className="message-user">
-                        <MessageUserIcon color={getColor(message)}/>
-                        {getUser(message.user_id).name}
-                    </div>
-                    <div className="message-text">
-                        {/*<RobotMessagePreloader>*/}
-                        <div className={classes} ref={targetRef}>{message.text}</div>
-                        {/*</RobotMessagePreloader>*/}
-                    </div>
-                </div>
-
-                :
-
-                <div className="row ml-0 mr-0 flex-row-reverse">
-                    <div className="message-user-right">
-                        <MessageUserIcon color={getColor(message)}/>
-                    </div>
-                    <div className="message-text-mine text-right">
-                        <div className={classes} ref={targetRef}>{message.text}</div>
-                    </div>
-                </div>
+        <ListItemText
+            primary={!isMine && userName}
+            secondary={
+                <React.Fragment>
+                    <Typography
+                        component="span"
+                        variant="body2"
+                        className="d-inline"
+                        color="textPrimary"
+                    >
+                        >>&nbsp;
+                    </Typography>
+                    {message.text}
+                </React.Fragment>
             }
-        </>
-    )
+        />
+        {isMine &&
+        <ListItemAvatar>
+            <Avatar alt={userName} src="/static/images/avatar/avatar.jpg"/>
+        </ListItemAvatar>
+        }
+    </ListItem>
 }
-
