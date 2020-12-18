@@ -3,7 +3,7 @@
 $messageUserWidth: 100px;
 $colorPrime: #0B54A2;
 $colorPrimeFilter: rgba(11, 84, 152, 0.8);
-$colorSecond: #4ecaca;
+$colorSecond: #8a92e3;
 $colorBack: #BBCBDD;
 
 body {
@@ -20,13 +20,18 @@ code {
   monospace;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .messages-field {
-  height: 500px;
+  height: 450px;
   display: flex;
   flex-direction: column;
 }
 
 .message-user {
+  display: flex;
   height: inherit;
   width: $messageUserWidth;
 }
@@ -65,6 +70,7 @@ code {
 }
 
 .chat-item {
+  transition: all .5s ease-out;
   cursor: pointer;
 }
 
@@ -89,4 +95,85 @@ code {
 .message:hover .message-text-in {
   background-color: $colorPrimeFilter;
   color: white;
+}
+
+.logo {
+
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.logo * {
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: $colorPrime;
+  fill: $colorPrime;
+}
+
+.logo:hover {
+  background-color: $colorPrime;
+}
+
+.logo:hover * {
+  color: $colorBack;
+  fill: $colorBack;
+}
+
+.logo-btn {
+  border-radius: .5rem;
+  border: 1px solid $colorPrime;
+  background-color: inherit;
+
+  &:hover {
+    border-color: currentColor;
+    background-color: $colorPrime;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px $colorPrime,
+    0 0 0 1.5px $colorSecond;
+  }
+}
+
+.btn-close{
+  border: 2px solid #000;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+  line-height: 1rem;
+}
+
+.header-alert{
+  height: 2.5rem;
+  margin-top: .7rem;
+  padding: 1rem;
+}
+
+.header-alert-enter{
+  opacity: 0;
+}
+.header-alert-active{
+  transition: opacity 500ms ease-out;
+  opacity: 1;
+}
+.header-alert-exit-active{
+  transition: opacity 350ms ease-out;
+  opacity: 0;
+}
+
+.context-menu{
+  position:fixed;
+  border: 1px solid #000;
+  list-style: none;
+  background-color: #fff;
+}
+.context-menu-item:hover{
+  background-color: blue;
+  cursor: pointer;
 }

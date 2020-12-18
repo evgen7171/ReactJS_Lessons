@@ -1,37 +1,32 @@
-import {data} from "./data";
+import {data} from "../data/data";
+import {useLocation} from "react-router-dom";
 
-/**
- * Контроллер для получения/изменения данных
- * @returns {{myID: number, getChatTitle: (function(*): string|*), allUsers: [{role: string, name: string, id: number}, {role: string, name: string, id: number}, {role: string, name: string, id: number}], allChats: [{id: number, title: string}, {id: number, title: string}, {id: number, title: string}], getMessagesByChatID: (function(*): unknown[]), defaultChatID: number, getUserByMessage: (function(*): unknown), allMessages: [{chatID: number, text: string, userID: number}, {chatID: number, text: string, userID: number}, {chatID: number, text: string, userID: number}, {chatID: number, text: string, userID: number}, {chatID: number, text: string, userID: number}], robotID: number, robotChatID: number}}
- */
-export function useDataObject() {
-    const allMessages = data.messagesArray;
-    const defaultChatID = data.defaultChatID;
-    const myID = data.myID;
-    const robotChatID = data.robotChatID;
-    const allUsers = data.users;
-    const robotID = data.robotID;
-    const allChats = data.chats;
+export const allMessages = data.messages;
+export const defaultChatID = data.defaultChatID;
+export const myID = data.myID;
+export const robotChatID = data.robotChatID;
+export const allUsers = data.users;
+export const robotID = data.robotID;
+export const allChats = data.chats;
 
-    const getMessagesByChatID = chatID => {
-        return data.messagesArray.filter(message => message.chatID === chatID)
-    }
-    const getUserByMessage = message => {
-        return data.users.find(user => user.id === message.userID)
-    }
-    const getChatTitle = ChatID => {
-        return data.chats.find(chat => chat.id === ChatID).title
-    }
-    return {
-        allMessages,
-        defaultChatID,
-        myID,
-        robotChatID,
-        allUsers,
-        robotID,
-        allChats,
-        getMessagesByChatID,
-        getUserByMessage,
-        getChatTitle
-    }
+export const getUserByMessage = message => {
+    return allUsers.find(user => user.id === message.userID)
+}
+export const getChatTitle = ChatID => {
+    const chat = allChats.find(chat => chat.id === ChatID);
+    return chat ? chat.title : null
+}
+export const getMessagesByChatID = (messages, chatID) => {
+    return messages.filter(message => message.chatID === chatID)
+}
+export const getColorByUserID = userID => ['red', 'blue', 'green'][userID - 1]
+
+export const getMyInfo = () => {
+    return allUsers.find(user => user.id === myID);
+}
+
+
+export const getSelectedChatIDByLocation = location => {
+    const locationMatches = [...location.pathname.matchAll(/chat\/.*$/g)];
+    return locationMatches.length ? +(locationMatches[0][0].substr(5)) : null;
 }

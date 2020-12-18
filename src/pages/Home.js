@@ -1,10 +1,13 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 export const Home = () => {
-    return <div className="container border border-primary form mt-3 rounded">
-        <h4>React Net</h4>
-        <div className="form-control form-group bg-white messages-field border-primary">
 
+    return <>
+        <div className="form-control form-group bg-white messages-field border-primary">
+            <Link to="/">Главная</Link>
+            <Link to="/chat">Мессенджер</Link>
+            <Link to="/profile">Профиль</Link>
         </div>
-    </div>
+    </>
 }

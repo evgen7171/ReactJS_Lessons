@@ -3,7 +3,7 @@ import {contextMenuReducer} from "./contextMenuReducer";
 import {ContextMenuContext} from "./ContextMenuContext";
 import {hideContextByMessage, showContextByMyMessage, showContextByNotMyMessage} from "./actions";
 
-export const ContextMenuStateContainerState = ({children}) => {
+export const ContextMenuState = ({children}) => {
     const [state, dispatch] = useReducer(
         contextMenuReducer,
         {visible: false, coords: null}
