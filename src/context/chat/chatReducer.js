@@ -13,8 +13,9 @@ export const chatReducer = (state = initialState, action) => {
                 ...state
             }
         case 'REMOVE_STORE_CHAT':
-            const chatIndex = state.openedChats.findIndex(chat =>
-                chat.id === action.payload.chatID
+            const chatIndex = state.openedChats.findIndex(chat => {
+                    return chat.id === +action.payload.chatID
+                }
             );
             chatIndex !== -1 && state.openedChats.splice(chatIndex, 1)
             return {
@@ -23,4 +24,5 @@ export const chatReducer = (state = initialState, action) => {
         default:
             return {...state}
     }
+    return {...state}
 }

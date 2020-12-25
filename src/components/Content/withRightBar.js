@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {RightBar} from "../RightBar/RightBar";
 import {RIGHT_MENU_COMPONENTS} from "../RightBar/register";
+import {store} from "../../index";
 
 export function withRightBar(Component) {
     return function () {

@@ -11,7 +11,11 @@ const history = createBrowserHistory();
 
 const loggerMiddleware = createLogger()
 
-const middleware = [thunk, loggerMiddleware, routerMiddleware(history)]
+const middleware = [
+    thunk,
+    // loggerMiddleware,
+    routerMiddleware(history)
+];
 
 // combineReducers({
 //         chatReducer, messageReducer
@@ -24,14 +28,15 @@ const configureStore = composeEnhancers(
 )(createStore)
 
 const config = {
-    key: 'root',
+    key: 'openedChats',
     storage,
+    whiteList: ['openedChats']
 }
 
-const pReducer = persistReducer(config, chatReducer)
+const pChatReducer = persistReducer(config, chatReducer)
 
 const appStore = () => {
-    let store = configureStore(pReducer)
+    let store = configureStore(pChatReducer)
     let persistor = persistStore(store)
 
     return {persistor, store}

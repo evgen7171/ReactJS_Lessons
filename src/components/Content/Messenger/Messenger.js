@@ -17,6 +17,7 @@ function Messenger() {
     }
 
     const chat = getChatByID(+chatID);
+
     chat && store.dispatch(addStoreChat(chat))
 
     const messages = getMessagesByChatID(+chatID);

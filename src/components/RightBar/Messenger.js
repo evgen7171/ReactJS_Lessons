@@ -1,49 +1,30 @@
-import React, {useEffect} from 'react';
-import {Link, useParams, Redirect} from "react-router-dom";
-import {removeStoreChat} from "../../context/actions";
+import React, {useEffect, useState} from 'react';
+import {useParams} from "react-router-dom";
 import {store} from '../../index';
+import {MessengerLink} from "./MessengerLink";
 
 export const Messenger = () => {
 
+    const defaultLinks = [
+        {title: 'все чаты', link: '/im'},
+        {title: 'добавить чаты', link: '/'}
+    ];
+
     const selectedChatID = +useParams().chatID;
 
-    const getChats = () => store.getState() ?
-        store.getState().openedChats : [];
-
-    const removeChat = e => {
-        // window.location.href = '/';
-        const chatID = +e.target.id.substr(5);
-        if(chatID === selectedChatID){
-            window.location.href = '/im'
-        }
-        store.dispatch(removeStoreChat(chatID));
-
-        // return <Redirect to="/im"/>
-    }
-
-    const chatLinks = [
-        {title: 'все чаты', link: '/im', default: true},
-        ...getChats(),
-        {title: 'добавить чаты', link: '/', default: true}
-    ]
+    const [items, setItems] = useState(store.getState().openedChats)
+    useEffect(()=>{
+        setItems(store.getState().openedChats)
+    },[store.getState().openedChats])
 
     return <>
-        {chatLinks.map((chat, key) =>
-            <div key={key}
-                 className="d-flex align-items-center justify-content-between">
-                <Link to={chat.link}
-                      className="list-group-item-action btn">
-                    <div>{chat.title}</div>
-                </Link>
-                {
-                    !chat.default &&
-                    <div className="btn btn-sm border"
-                         id={`chat-${chat.id}`}
-                         onClick={removeChat}
-                    >&times;</div>
-
-                }
-            </div>
-        )}
+        <MessengerLink chat={defaultLinks[0]} defaultChat/>
+        {
+            items &&
+            items.map((chat, key) =>
+                <MessengerLink chat={chat} key={key}
+                               isSelectedChat={chat.id === selectedChatID}/>
+            )}
+        <MessengerLink chat={defaultLinks[1]} defaultChat/>
     </>
 }

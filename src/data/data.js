@@ -51,15 +51,18 @@ export default {
     chats: [
         {
             id: 1,
-            title: 'chat привет'
+            title: 'chat привет',
+            link: '/im/1'
         },
         {
             id: 2,
-            title: 'chat lorem'
+            title: 'chat lorem',
+            link: '/im/2'
         },
         {
             id: 3,
-            title: 'chat robot'
+            title: 'chat robot',
+            link: '/im/3'
         },
     ]
 }
