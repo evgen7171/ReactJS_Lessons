@@ -1,19 +1,126 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+$primaryColor: #3771e3;
+$secondaryColor: #45c1b9;
+$leftWidth: 200px;
+$rightWidth: 200px;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
-.message-field{
-  height: 300px;
+.header-left {
+  cursor: pointer;
+  background-color: #de4141;
+  color: #000;
 }
+
+.header-left:hover {
+  background-color: #030101;
+  color: #fff;
+}
+
+.header-profile {
+  cursor: pointer;
+}
+
+.header-profile:hover {
+  color: #3771e3;
+}
+
+.header-profile:hover .header-profile-icon {
+  border-color: #3771e3;
+}
+
+.header-profile-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.sidebar-left {
+  border-right: 1px solid #ccc;
+}
+
+.sidebar-right {
+  border-left: 1px solid #ccc;
+}
+
+.sidebar-left, .header-left {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+.sidebar-right {
+  flex: 0 0 15%;
+  max-width: 15%;
+}
+
+.drop-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 2rem;
+  margin-left: -155px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: .5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.drop-menu-item {
+  display: inline-block;
+}
+
+//.message-field {
+//  height: 300px;
+//}
+//
+//.form-header {
+//  background-color: $secondaryColor;
+//  border-top-left-radius: .8rem;
+//  border-top-right-radius: .8rem;
+//  min-height: 2.5rem;
+//  line-height: 2.5rem;
+//  text-align: center;
+//  font-weight: bold;
+//}
+//
+//.form-main {
+//  padding-left: .5rem;
+//  padding-right: .5rem;
+//  padding-bottom: 1rem;
+//}
+//
+//.form-submit {
+//  background-color: $secondaryColor;
+//}
+//
+//.wrap-border{
+//  border-radius: 1rem;
+//  border: 4px solid $primaryColor;
+//  box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+//}
+//.content{
+//  margin-top: 1.5rem;
+//  margin-left: 29%;
+//  width: 46%;
+//}
+//.content-wide{
+//  margin-top: 1.5rem;
+//  margin-left: 29%;
+//  width: 75%;
+//}

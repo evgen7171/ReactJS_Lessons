@@ -8,8 +8,8 @@ import {Provider} from "react-redux";
 import {PersistGate} from 'redux-persist/es/integration/react'
 import {createBrowserHistory} from "history";
 
-import appStore from "./context/store";
-import {BrowserRouter, Switch} from "react-router-dom";
+import appStore from "./redux/store";
+import {BrowserRouter} from "react-router-dom";
 
 export const history = createBrowserHistory();
 export const {store, persistor} = appStore();
@@ -18,9 +18,7 @@ render(
     <Provider store={store}>
         <PersistGate persistor={persistor}>
             <BrowserRouter>
-                <Switch>
-                    <App/>
-                </Switch>
+                <App/>
             </BrowserRouter>
         </PersistGate>
     </Provider>,

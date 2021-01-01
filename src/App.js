@@ -1,26 +1,22 @@
 import React from 'react'
-import {Route} from "react-router-dom";
-import {Header} from "./components/Header";
-import {Sidebar} from "./components/Sidebar";
-import News from "./components/Content/News";
-import Profile from "./components/Content/Profile";
-import Messenger from "./components/Content/Messenger/Messenger";
+import {Route} from 'react-router-dom'
+import Home from "./components/Home";
+import Signup from "./components/SignUp";
+import Login from "./components/Login";
+import AuthSwitch from "./router";
+import Private from "./components/Private";
+
+const PublicRoute = ({...props}) => <Route {...props}/>
+const PrivateRoute = ({...props}) => <Route {...props}/>
 
 function App() {
     return (
-        <div className="container">
-            <header className="row border border-primary pt-2 pb-2">
-                <div className="col-3">Logo</div>
-                <Header/>
-            </header>
-            <div className="row pt-3">
-                <Sidebar/>
-                <Route path={['/', '/feed']} exact component={News}/>
-                <Route path='/user' exact component={Profile}/>
-                <Route path='/im/:chatID' exact component={Messenger}/>
-                <Route path='/im' exact component={Messenger}/>
-            </div>
-        </div>
+        <AuthSwitch>
+            <PrivateRoute path="/" component={Private}/>
+            <PublicRoute path="/" exact component={Home}/>
+            <PublicRoute path="/login" exact component={Login}/>
+            <PublicRoute path="/signup" exact component={Signup}/>
+        </AuthSwitch>
     );
 }
 
