@@ -1,67 +1,68 @@
 export default {
     users: [
         {
-            id: 111,
-            name: 'I am'
+            id: 1,
+            name: 'I am',
+            role: 'admin'
         },
         {
-            id: 222,
-            name: 'Igor'
+            id: 2,
+            name: 'Igor',
+            role: 'user'
         },
         {
-            id: 333,
-            name: 'Ivan'
-        },
-        {
-            id: 100,
-            name: 'robot'
+            id: 3,
+            name: 'Ivan',
+            role: 'user'
         },
     ],
     messages: [
         {
             id: 1,
             chatID: 1,
-            userID: 111,
+            userID: 1,
             text: 'Привет!'
         },
         {
             id: 2,
             chatID: 1,
-            userID: 222,
+            userID: 2,
             text: 'Привет!'
         },
         {
             id: 3,
             chatID: 1,
-            userID: 111,
+            userID: 1,
             text: 'Как дела?'
         },
         {
             id: 4,
             chatID: 2,
-            userID: 222,
+            userID: 2,
             text: 'lorem...'
         },
         {
             id: 5,
             chatID: 2,
-            userID: 333,
+            userID: 3,
             text: 'ipsum...'
         }
     ],
     chats: [
         {
             id: 1,
-            usersIDs: [222, 111]
+            title: 'chat привет',
+            link: '/im/1'
         },
         {
             id: 2,
-            usersIDs: [111, 333]
+            title: 'chat lorem',
+            link: '/im/2'
         },
         {
             id: 3,
-            usersIDs: [111, 100]
-        }
-    ],
-    activeUserID: 111
+            title: 'chat robot',
+            link: '/im/3'
+        },
+    ]
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import {SideBarWrapper} from "./SideBarWrapper";
 
 export const Sidebar = () => {
     const sidebarItems = [
@@ -9,12 +8,12 @@ export const Sidebar = () => {
         {title: 'Мессенджер', link: '/im'}
     ];
 
-    return <SideBarWrapper>
+    return <aside className="col-3 p-0 overflow-auto">
         {sidebarItems.map((item, key) =>
             <Link key={key} to={item.link}
                   className="list-group-item-action p-1 mb-1 btn">
                 {item.title}
             </Link>
         )}
-    </SideBarWrapper>
+    </aside>
 }

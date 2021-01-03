@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
+import {withRightBar} from "./withRightBar";
 
-const url = "http://jsonplaceholder.typicode.com/posts?_start=1&_limit=10";
+const url = "http://jsonplaceholder.typicode.com/posts?_start=1&_limit=5";
 
 function News() {
 
@@ -9,7 +10,6 @@ function News() {
         error: false
     });
 
-    // todo вынести отдельно
     useEffect(() => {
         try {
             fetch(url)
@@ -17,7 +17,6 @@ function News() {
                 .then(json => {
                     setData({...data, payload: json});
                 })
-
         } catch (e) {
             setData({...data, error: true});
         }
@@ -34,4 +33,4 @@ function News() {
     }</div>
 }
 
-export default News
+export default withRightBar(News)
